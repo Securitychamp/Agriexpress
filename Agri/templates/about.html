@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+<style>
+     body {
+
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color:green;
+            color:#fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .mission-section {
+            background-color: green;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .highlight {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+  </style>
+{% block content %}
+
+   <div class="header">
+        <h1 style="text-align:center"> Welcome to Agri Express</h1>
+    </div>
+    <div class="container">
+        <h1>About Us</h1>
+        <p>This magazine, Agri Express, is dedicated to innovative agri-youth and progressive farmers interested in sustainable agriculture, natural farming, and allied sectors of agriculture.</p>
+        <p>It is designed to introduce scientific information in a popular way to progressive farmers, agriculture students, and scholars interested in how modern agricultural science can solve day-to-day farming problems.</p>
+        <p>It has articles, research papers, photo features, interviews, success stories, and an editorial page.</p>
+        <p>In addition to publishing "popular or technical articles," it aims to publish ideas from authors such as researchers, students, scientists, progressive farmers, and any other member of the scientific community, as well as provide useful information to farmers, scientists, and the agricultural and scientific communities.</p>
+        <p>The magazine publishes every three months (four issues in a year) in all areas of agricultural and allied sciences.</p>
+        <div class="mission-section">
+            <h2>Our Mission</h2>
+            <p>Our mission is to provide an open-access platform for authors to publish their knowledge and experiences in agriculture and allied sciences, and for readers to gain knowledge about popular agricultural and technological activities.</p>
+            <p>A mission is led to extend technologies from a region where they are quite popular to a region where they are not known, so that others may benefit from them.</p>
+            <p>Agricultural and allied sciences researchers, scientists, extension workers, farmers, students, or any other person interested in agriculture and allied sciences are highly encouraged to participate in this mission.</p>
+            <p>We encourage both authors and readers to share their knowledge and experiences in agricultural and allied sciences.</p>
+            <p>Join us on this enriching journey as we explore the vast realms of agriculture and allied sciences, harnessing the power of knowledge and innovation to create a sustainable and prosperous future.</p>
+            <a class="button" href="#">Learn More</a>
+        </div>
+    </div>
+
+{% endblock content %}

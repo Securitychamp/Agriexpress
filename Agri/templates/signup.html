@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+</head>
+<body>
+{% block content %}
+<section class="container col-sm-4">
+
+</section>
+<section class="container col-sm-4">
+    <h1>Become a Member</h1>
+    <h2>Kindly fill the details Properly.</h2>
+<form action=" " method="post" novalidate>
+    {% csrf_token %}
+    {% for fm in form %}
+    <div class="form-group" >
+        {{fm.label_tag}} {{fm}} <small class="text-warning">{{fm.errors|striptags}}</small>
+        {% endfor %}
+    </div>
+    <div class="submit">
+        <input type="submit" class="btn btn-primary" value="Signup">
+    </div>
+    {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+            <p class="alert alert-danger my-3">{{error}}</p>
+        {% endfor %}
+    {% endif %}
+</form>
+</section>
+<section class="container col-sm-4">
+
+</section>
+{% endblock %}
+</body>
+</html>

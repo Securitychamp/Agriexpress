@@ -1,0 +1,124 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css">
+
+    <title>Your Website</title>
+  <style>
+    a
+    {
+      color:green;
+    }
+    .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            background-color: green;
+        }
+
+        .nav-item.dropdown:hover .nav-link {
+            background-color: green; /* Change to your desired green color */
+            color: #fff; /* Text color when hovering */
+        }
+
+        .dropdown-menu {
+            background-color: green; /* Change to your desired green color */
+        }
+
+        .dropdown-menu a {
+            color: green; /* Text color inside the dropdown menu */
+        }
+  </style>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="/media/img/agriexpress-logo.png" height="100">
+    </div>
+    <div class="col-md-4" style="color:green">
+      <h1 style="text-align:center">AgriExpress</h1>
+      <h2 style="text-align:center">Transforming Bharat Through Agrliculture</h2>
+    </div>
+    <div class="col-md-4">
+    <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary" >
+  <div class="container-fluid" id="nav1">
+    <a class="navbar-brand" href="/">AgriExpress</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/guidelines">Author Guideline</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/article">Article</a>
+        </li>
+       <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownIssue" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Issue
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownIssue">
+            <li><a class="dropdown-item" href="/currentissue">Current</a></li>
+            <li><a class="dropdown-item" href="/archive">Archives</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="/editorialboard">Editorial board</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/contact">Contact US</a>
+        </li>
+
+
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link " href="/profile">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/logout">logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link " href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/signup">Signup</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+     <div class="container-fluid">
+    <a class="navbar-brand"> </a>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+  </div>
+</nav>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container-fluid">
+    <div class="row" id="first">
+        <div class="col-md-10" id="slider">
+        {% include 'slider.html' %}
+        </div>
+        <div class="col-md-2" id="latest">
+        {% include 'latest.html' %}
+        </div>
+    </div>
+       <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="container">
+            <span><b>Welcome to Our Agriexpress Blog</b></span></br>
+
+            <span>Transforming Bharat though Agriculture</span></br>
+
+            <a class="btn btn-primary" id="button" href="/post">Explore</a>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <div class="container" id="blogpost_mix">
+
+        <div class="row" >
+            {% for post in posts %}
+            <div class="col-md-4">
+
+                <div class="blog-post">
+                    <h2>{{ post.title }}</h2>
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" style="height:90px" width="200px">
+                    <h3>{{ post.category }}</h3>
+
+                    <a class="btn btn-secondary" href="{% url 'post_detail' post.id %}">Read More</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

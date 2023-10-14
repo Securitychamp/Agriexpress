@@ -1,0 +1,12 @@
+
+
+        <h2 style="background-color:green">News & Highlights</h2>
+        <ul class="list-group">
+            {% for post in posts|slice:":5" %} {# Display the 5 most recent posts #}
+            <li class="list-group-item">
+                <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+                <span class="badge badge-secondary">{{ post.pub_date }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ request.user.username }} Profile</title>
+</head>
+<style>
+    .profiletop
+    {
+        height:500px;
+        border:10px solid red;
+    }
+    .debug
+    {
+        height:200px;
+        border:2px solid yellow;
+    }
+</style>
+<body>
+{% block content %}
+
+<section class="profiletop">
+    {% load static %}
+  {% if request.user.profile.profile_image.url %}
+    <img class="profile_image" src="{{ request.user.profile.profile_image.url }}" alt="Profile Image">
+  {% else %}
+    <p>No profile image found.</p>
+  {% endif %}
+</section>
+<div class="debug">
+    <!-- Debugging -->
+{% for post in user_posts %}
+    <p>{{ post.image.url }}</p>
+{% endfor %}
+{% endblock %}
+</div>
+
+</section>
+</body>
+</html>

@@ -1,0 +1,33 @@
+/* Basic slider container styles */
+#slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Individual slider item styles */
+.slider-item {
+    width: 100%;
+    display: none;
+}
+
+.slider-item img {
+    width: 100%;
+    height: auto;
+}
+
+/* Navigation styles (optional) */
+.slider-nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.slider-nav button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+/* Add more styling as needed */

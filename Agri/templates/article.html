@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Article</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+  {% block content %}
+
+    <div class="container">
+        <h1 class="mt-4">Article List</h1>
+        <ul class="list-group mt-4">
+            {% for article in articles %}
+                <li class="list-group-item">
+                    <h2>{{ article.title }}</h2>
+                    <p>{{ article.content }}</p>
+                    <p>Published by {{ article.author.username }} on {{ article.publication_date }}</p>
+                    <a href="{{ article.file.url }}" class="btn btn-primary" download >Download</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+  {% endblock %}
+</body>
+</html>

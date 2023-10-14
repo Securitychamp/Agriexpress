@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Agriculture Blog - Posts</title>
+</head>
+<body>
+     {% block content %}
+    <h1>Welcome to My Agriculture Blog</h1>
+    <h2>Latest Posts</h2>
+
+    <ul>
+        {% for post in posts %}
+        <li>
+            <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+            <br>
+            Category: {{ post.category }}
+            <br>
+            Author: {{ post.author }}
+            <br>
+            Published on: {{ post.pub_date }}
+
+            <br>
+
+
+            <img src='{{ post.image.url }}' >
+
+        </li>
+        {% empty %}
+        <li>No posts available.</li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+</body>
+</html>
